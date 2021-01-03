@@ -1,0 +1,332 @@
+@import url("./card.css")
+
+* {
+  box-sizing: border-box;
+}
+
+:root
+{
+    --font : "IBM Plex", monospace;
+}
+
+body {
+  margin: 0px;
+  font-family: 'segoe ui';
+  background: rgb(26, 26, 27);
+  color: #FFFFFF;
+}
+
+.nav {
+  height: 50px;
+  width: 100%;
+  background-color: #4d4d4d;
+  position: relative;
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav-title
+{
+    font-family: var(--font);
+}
+
+.nav-title::selection
+{
+    background-color: #4d4d4d;
+    color: #f1f1f1;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+
+.nav > .nav-links > a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
+.intro
+{
+    text-align: center;
+    font-family: var(--font);
+    font-size: 40px;
+    letter-spacing: normal;
+    margin-top: 10px;
+}
+
+.text
+{
+    font-weight: 200;
+}
+
+.text::selection
+{
+    background-color: #4d4d4d;
+    color: #f1f1f1;
+}
+
+.coupon {
+  border: none; /* Dotted border */
+  width: 80%;
+  border-radius: 15px; /* Rounded border */
+  margin: 0 auto; /* Center the coupon */
+  max-width: 600px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+  background: rgb(52, 53, 54);
+  color: #FFFFFF;
+
+}
+
+.container {
+  padding: 2px 16px;
+  background-color: #f1f1f1;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 200;
+  background: rgb(52, 53, 54);
+}
+
+.promo {
+  background: #f1f1f1;
+  padding: 3px;
+}
+
+.expire {
+  color: rgb(114, 137, 218);
+}
+
+a{
+  text-decoration: none;
+}
+
+.column {
+  float: left;
+}
+
+.left {
+  width: 15%;
+}
+
+.dot {
+  margin-top: 4px;
+  height: 12px;
+  width: 12px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.reddit
+{
+  color: rgb(255, 69, 0);
+}
+
+.pro {
+  display: inline-block;
+  background: #343536;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  z-index: 11;
+  border: none;
+  outline: none;
+  margin: 10px 10px 10px 10px;
+}
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.contain {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+  .link-btn {
+    position: relative;
+    margin: 0px 20px;
+
+    a {
+      display: block;
+      height: 50px;
+      width: 50px;
+      padding: 0px;
+      border-radius: 25px;
+      font-size: 2rem;
+      text-align: center;
+      text-decoration: none;
+      font-family: sans-serif;
+      color: white;
+
+      i {
+        line-height: 50px;
+      }
+
+      &#github {
+        background-color: #1e272e;
+        &::before,
+        &::after {
+          background-color: #1e272e;
+        }
+      }
+      &#pinterest {
+        background-color: #bd081c;
+        &::before,
+        &::after {
+          background-color: #bd081c;
+        }
+      }
+      &#facebook {
+        background-color: #3b5998;
+        &::before,
+        &::after {
+          background-color: #3b5998;
+        }
+      }
+
+      &::before {
+        content: attr(data-content);
+        position: absolute;
+        display: block;
+        height: 25px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: white;
+        left: 50%;
+        font-size: 1rem;
+        line-height: 25px;
+        transition: all ease-out 0.3s;
+        transform-origin: center bottom;
+        transform: translateX(-50%) translateY(-120%) scale(0);
+      }
+
+      &:hover::before {
+        transform: translateX(-50%) translateY(-120%) scale(1);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 10px;
+        width: 10px;
+        top: 0px;
+        left: 50%;
+        transition: all ease-out 0.3s;
+        transform-origin: center center;
+        transform: translateX(-50%) translateY(-150%) rotateZ(45deg) scale(0);
+      }
+      &:hover::after {
+        transform: translateX(-50%) translateY(-150%) rotateZ(45deg) scale(1);
+      }
+    }
+  }
+}
