@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/main.css') }}">
 </head>
 <body>
     <h1>Hello World</h1>
-    <script type="module" src="./scripts/index.js"></script>
+    <script type="module" src="{{ url_for('static', filename='scripts/index.js') }}"></script>
 </body>
 </html>

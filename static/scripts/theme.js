@@ -1,5 +1,12 @@
-export default allThemes = {
-    darkBackground : 
+export const allThemes = {
+    darkBackground : {
+        theme : "#36393F",
+        color : "white"
+    },
+    lightBackground : {
+        theme : "#FFFFFF",
+        color : "#000000"
+    }
 }
 
 export function createNewTheme(themeColor){
