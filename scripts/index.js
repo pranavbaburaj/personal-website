@@ -1,0 +1,1 @@
+// window.history.pushState({id:"100"}, "Page 2", "/data")
