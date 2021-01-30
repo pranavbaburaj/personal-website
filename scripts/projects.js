@@ -23,7 +23,7 @@ function github(user) {
     const repo_list = document.querySelector("#user ul");
     repo_list.innerHTML = "";
     var ulElement = document.createElement("li");
-    ulElement.innerText = "carregando...";
+    ulElement.innerText = "Fetching";
     repo_list.appendChild(ulElement);
     var l = []
   
@@ -35,11 +35,11 @@ function github(user) {
           ulElement.classList.add("rp")
           ulElement.id = "lol"
           ulElement.innerText = res.name;
-        //   ulElement.addEventListener('click', function(event){
-        //       window.open(
-        //           `https://github.com/pranavbaburaj/${this.innerHTML}`
-        //       )
-        //   })
+          ulElement.addEventListener('click', function(event){
+              window.open(
+                  `https://github.com/pranavbaburaj/${this.innerHTML}`
+              )
+          })
           repo_list.appendChild(ulElement)
           l.push(ulElement)
         }
