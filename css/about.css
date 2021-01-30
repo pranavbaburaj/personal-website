@@ -11,6 +11,8 @@ Variables
 ===============
 */
 
+
+
 :root {
 	/* dark shades of primary color*/
 	--clr-primary-1: hsl(205, 86%, 17%);
@@ -71,7 +73,8 @@ body {
 	background: var(--clr-grey-10);
 	color: var(--clr-grey-1);
 	line-height: 1.5;
-	font-size: 0.875rem;
+    font-size: 0.875rem;
+    overflow: hidden;
 }
 ul {
 	list-style-type: none;
