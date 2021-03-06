@@ -13,5 +13,5 @@ discordButton.addEventListener('click', function(event){
 })
 
 project.addEventListener('click', function(event){
-    window.location.href = "/projects.html"
+    window.location.href = "https://github.com/pranavbaburaj"
 })
